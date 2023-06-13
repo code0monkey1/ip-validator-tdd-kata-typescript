@@ -7,7 +7,6 @@ export default class IpValidator{
                this.hasInvalidShape(address) ||
                this.hasInvalidEnd(address) || 
                this.hasInvalidSegments(address)
-
             ) {
                  return false
             }
@@ -48,11 +47,11 @@ export default class IpValidator{
      }
 
      private hasInvalidSegments(address:string){
-          
+   
           const ipParts= this.getIpParts(address)
-
+          
           ipParts.forEach( part =>{
-            
+     
                if(Number.isNaN(Number(part))){
                     return true
                }
