@@ -100,5 +100,33 @@ describe('IpValidator', () => {
           
        } )
     })
+
+     describe('Addresses ending with 0 are invalid', () => {
+         
+       it.each([  {
+        address:"0.0.0.0"
+      },
+        {
+        address:"255.255.255.255"
+      },
+        {
+        address:"10.0.1"
+      },
+      {
+        address:"192.168.01.1"
+      },
+       {
+        address:"192.168.1.00"
+      }
+    ])('$address should return false',({address})=>{
+             
+          const ipValidator = new IpValidator()
+          
+          const result = ipValidator.validateIpv4Address(address)
+
+          expect(result).toBe(false)
+          
+       } )
+    })
     
 })
