@@ -32,12 +32,18 @@ describe('IpValidator', () => {
       },
         {
         address:"1.1.1."
-      }
+      },
+      {
+        address:"1.1.1.1."
+      },
+       {
+        address:"1.1.1.1.3"
+      },
+
     ])('it returns false when IP address $address is not separated by 4 dots like 1.2.2 ',({address})=>{
            
            const ipValidator = new IpValidator()
 
-            
-          expect(()=>ipValidator.validateIpv4Address(address)).toThrowError("Ip address has invalid structure : "+address)
+          expect(ipValidator.validateIpv4Address(address)).toBe(false)
       })
 })
