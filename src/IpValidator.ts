@@ -54,7 +54,7 @@ export default class IpValidator{
           ipParts.forEach( part =>{
             
                if(Number.isNaN(Number(part))){
-                    return true;
+                    return true
                }
          
               if(Number(part).toString()!==part){
