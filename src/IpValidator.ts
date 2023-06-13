@@ -51,15 +51,14 @@ export default class IpValidator{
    
           const ipParts= this.getIpParts(address)
           
-          ipParts.forEach( part =>{
-               const stoItoS =Number(part).toString()
-               
+         for(let part of ipParts){
+
                if( Number.isNaN(Number(part)) || 
-                  stoItoS  !== part  ){
+                 Number(part).toString()  !== part  ){
                     return true
                }
          
-          })
+          }
 
           return false
      }
