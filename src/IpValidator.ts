@@ -5,9 +5,8 @@ export default class IpValidator{
            const ipParts= this.splitIpAddress(address)
 
            if(ipParts.length!==4 ||ipParts.some( part => part.trim()==='')){
-               return false
+               throw new Error("Ip address has invalid structure : "+address)
            }
-
           return true
 
      }

@@ -1,4 +1,4 @@
-import IpValidator from "../src/IpValidator"
+import IpValidator from '../src/IpValidator';
 
 describe('IpValidator', () => {
        
@@ -44,6 +44,20 @@ describe('IpValidator', () => {
            
            const ipValidator = new IpValidator()
 
-          expect(ipValidator.validateIpv4Address(address)).toBe(false)
+          expect(()=>ipValidator.validateIpv4Address(address)).toThrowError("Ip address has invalid structure : "+address)
       })
+
+    describe('Addresses ending with 255 are invalid', () => {
+         
+       it('1.1.1.255 should return false',()=>{
+             
+          const ipValidator = new IpValidator()
+          
+          const result = ipValidator.validateIpv4Address('1.1.1.255')
+
+          expect(result).toBe(false)
+          
+       } )
+    })
+    
 })
