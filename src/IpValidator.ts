@@ -10,7 +10,7 @@ export default class IpValidator{
                throw new Error("Ip address has invalid structure : "+address)
            }
 
-           if(ipParts[3]==='255' || ipParts[3]==='0'){
+           if(this.isInvalidEnd(ipParts[3])){
                return false
            }
 
@@ -28,7 +28,7 @@ export default class IpValidator{
           
          const invalidEnds =['255','0']
 
-         if (invalidEnds.includes(srt))
+         return invalidEnds.includes(str)
 
      }
 
