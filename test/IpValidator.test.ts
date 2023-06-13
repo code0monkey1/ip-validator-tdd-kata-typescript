@@ -63,7 +63,34 @@ describe('IpValidator', () => {
       },
        {
         address:"255.1.1.255"
-      },])('1.1.1.255 should return false',({address})=>{
+      },])('$address should return false',({address})=>{
+             
+          const ipValidator = new IpValidator()
+          
+          const result = ipValidator.validateIpv4Address(address)
+
+          expect(result).toBe(false)
+          
+       } )
+    })
+
+        describe('Addresses ending with 0 are invalid', () => {
+         
+       it.each([  {
+        address:"1.2.2.0"
+      },
+        {
+        address:"1.1.3.0"
+      },
+        {
+        address:"1.1.1.0"
+      },
+      {
+        address:"1.15.1.0"
+      },
+       {
+        address:"255.1.1.0"
+      },])('$address should return false',({address})=>{
              
           const ipValidator = new IpValidator()
           
