@@ -31,7 +31,7 @@ describe('IpValidator', () => {
         address:"1."
       },
         {
-        address:"1.2.2"
+        address:"1.1.1."
       }
     ])('it returns false when IP address $address is not separated by 4 dots like 1.2.2 ',({address})=>{
            
