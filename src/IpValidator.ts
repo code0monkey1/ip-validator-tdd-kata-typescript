@@ -33,11 +33,11 @@ export default class IpValidator{
 
      private hasInvalidIpParts(address:string){
 
-            const VALID_LENGTH = 4
+            const VALID_PARTS_LENGTH = 4
 
             const ipParts= this.getIpParts(address)
 
-            return ipParts.length!==VALID_LENGTH ||ipParts.some( part => part.trim()==='')
+            return ipParts.length!==VALID_PARTS_LENGTH || ipParts.some( part => part.trim()==='')
 
      }
 
