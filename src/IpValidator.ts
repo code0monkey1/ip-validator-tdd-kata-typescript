@@ -8,7 +8,7 @@ export default class IpValidator{
                throw new Error("Ip address has invalid structure : "+address)
            }
 
-           if(ipParts[3]==='255'){
+           if(ipParts[3]==='255' || ipParts[3]==='0'){
                return false
            }
 
