@@ -13,7 +13,6 @@ export default class IpValidator{
            if(this.isInvalidEnd(ipParts[3])){
                return false
            }
-
            
            return true
 
