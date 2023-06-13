@@ -102,7 +102,9 @@ describe('IpValidator', () => {
     })
 
      describe('Misc false teat cases', () => {
-         
+              let stringNumber  ="001"
+          console.debug(Number(stringNumber))
+              console.log(Number(stringNumber).toString())
        it.each([  {
         address:"0.0.0.0"
       },
