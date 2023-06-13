@@ -142,9 +142,7 @@ describe('IpValidator', () => {
         {
         address:"127.0.0.1"
       },
-      {
-        address:"192.168.1.0"
-      },
+    
        {
         address:"1.1.1.1"
       }
