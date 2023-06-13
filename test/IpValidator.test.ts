@@ -38,8 +38,7 @@ describe('IpValidator', () => {
       },
        {
         address:"1.1.1.1.3"
-      },
-
+      }
     ])('it returns false when IP address $address is not separated by 4 dots like 1.2.2 ',({address})=>{
            
            const ipValidator = new IpValidator()
@@ -133,19 +132,18 @@ describe('IpValidator', () => {
       describe('Misc true teat cases', () => {
        
        it.each([  
-        {
-        address:"1.1.1.1"
-      },
-        {
-        address:"10.0.0.1"
-      },
-        {
-        address:"127.0.0.1"
-      },
-    
-       {
-        address:"1.1.1.1"
-      }
+                {
+                address:"1.1.1.1"
+                },
+                {
+                address:"10.0.0.1"
+                },
+                {
+                address:"127.0.0.1"
+               },
+               {
+                address:"1.1.1.1"
+               }
     ])('$address should return true',({address})=>{
              
           const ipValidator = new IpValidator()
