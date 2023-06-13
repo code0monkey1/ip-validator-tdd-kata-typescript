@@ -2,15 +2,12 @@ export default class IpValidator{
 
      
      public validateIpv4Address(address:string){
-          
 
-           const ipParts= this.splitIpAddress(address)
-
-           if(ipParts.length!==4 ||ipParts.some( part => part.trim()==='')){
+           if(this.hasInvalidIpParts(address)){
                throw new Error("Ip address has invalid structure : "+address)
            }
 
-           if(this.isInvalidEnd(ipParts[3])){
+           if(this.hasInvalidEnd(address)){
                return false
            }
            
@@ -23,12 +20,31 @@ export default class IpValidator{
           return address.split('.')
      }
 
-     private isInvalidEnd(str:string){
+     private hasInvalidEnd(address:string){
+
+          const LAST_INDEX=3
+
+          const ipParts= this.getIpParts(address)
           
          const invalidEnds =['255','0']
 
-         return invalidEnds.includes(str)
+         return invalidEnds.includes(ipParts[LAST_INDEX])
 
+     }
+
+     private hasInvalidIpParts(address:string){
+
+            const ipParts= this.getIpParts(address)
+
+            const VALID_LENGTH = 4
+
+            return ipParts.length!==VALID_LENGTH ||ipParts.some( part => part.trim()==='')
+
+     }
+
+     private getIpParts(address:string){
+             const ipParts= this.splitIpAddress(address)
+             return ipParts
      }
 
 
