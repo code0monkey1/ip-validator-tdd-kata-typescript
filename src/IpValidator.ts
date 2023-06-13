@@ -3,7 +3,7 @@ export default class IpValidator{
      
      public validateIpv4Address(address:string){
 
-           if(this.hasInvalidShape(address) || this.hasInvalidEnd(address))
+           if(this.hasInvalidShape(address) || this.hasInvalidEnd(address) || this.hasInvalidSegments(address))
                return false
            
            return true
@@ -39,6 +39,21 @@ export default class IpValidator{
              const ipParts= this.splitIpAddress(address)
 
              return ipParts
+     }
+
+     private hasInvalidSegments(address:string){
+          
+          const ipParts= this.getIpParts(address)
+
+          ipParts.forEach( part =>{
+               
+              if(!Number.isInteger(part)){
+                 return true 
+              }
+
+          })
+
+          return false
      }
 
 
