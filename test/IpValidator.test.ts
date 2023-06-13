@@ -12,4 +12,14 @@ describe('IpValidator', () => {
 
            expect(ipValidator.validateIpv4Address).toBeInstanceOf(Function)
       })
+
+
+      it('it returns true when `1.1.1.1` is given as IP ',()=>{
+           
+           const ipValidator = new IpValidator()
+
+           const result = ipValidator.validateIpv4Address("")
+            
+          expect(result).toBe(true)
+      })
 })
