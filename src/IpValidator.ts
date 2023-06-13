@@ -3,7 +3,7 @@ export default class IpValidator{
      
      public validateIpv4Address(address:string){
 
-           if(this.hasInvalidIpParts(address)){
+           if(this.hasInvalidShape(address)){
                throw new Error("Ip address has invalid structure : "+address)
            }
 
@@ -31,7 +31,7 @@ export default class IpValidator{
          return invalidEnds.includes(ipParts[LAST_INDEX])
      }
 
-     private hasInvalidIpParts(address:string){
+     private hasInvalidShape(address:string){
 
             const VALID_PARTS_LENGTH = 4
 
