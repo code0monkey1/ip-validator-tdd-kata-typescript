@@ -57,7 +57,7 @@ export default class IpValidator{
                     return true
                }
          
-              if(Number(part).toString()!==part){
+              if(Number(part).toString()===part){
                return true
               }
 
