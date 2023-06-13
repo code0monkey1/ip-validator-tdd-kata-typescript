@@ -49,11 +49,25 @@ describe('IpValidator', () => {
 
     describe('Addresses ending with 255 are invalid', () => {
          
-       it('1.1.1.255 should return false',()=>{
+       it.each([  {
+        address:"1.2.2.255"
+      },
+        {
+        address:"1.1.3.255"
+      },
+        {
+        address:"1.1.1.255"
+      },
+      {
+        address:"1.15.1.255"
+      },
+       {
+        address:"255.1.1.255"
+      },])('1.1.1.255 should return false',({address})=>{
              
           const ipValidator = new IpValidator()
           
-          const result = ipValidator.validateIpv4Address('1.1.1.255')
+          const result = ipValidator.validateIpv4Address(address)
 
           expect(result).toBe(false)
           
