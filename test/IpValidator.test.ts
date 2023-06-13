@@ -23,11 +23,21 @@ describe('IpValidator', () => {
           expect(result).toBe(true)
       })
 
-      it('it returns false when IP address is not separated by 4 dots like 1.2.2 ',()=>{
+      it.each([
+        {
+        address:"1.2.2"
+      },
+        {
+        address:"1."
+      },
+        {
+        address:"1.2.2"
+      }
+    ])('it returns false when IP address $address is not separated by 4 dots like 1.2.2 ',({address})=>{
            
            const ipValidator = new IpValidator()
 
             
-          expect(()=>ipValidator.validateIpv4Address("1.2.2")).toThrowError("Ip address has invalid structure : "+"1.2.2")
+          expect(()=>ipValidator.validateIpv4Address(address)).toThrowError("Ip address has invalid structure : "+address)
       })
 })
