@@ -101,7 +101,7 @@ describe('IpValidator', () => {
        } )
     })
 
-     describe('Addresses ending with 0 are invalid', () => {
+     describe('Misc false teat cases', () => {
          
        it.each([  {
         address:"0.0.0.0"
