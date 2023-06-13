@@ -18,7 +18,7 @@ describe('IpValidator', () => {
            
            const ipValidator = new IpValidator()
 
-           const result = ipValidator.validateIpv4Address("")
+           const result = ipValidator.validateIpv4Address("1.1.1.1")
             
           expect(result).toBe(true)
       })
@@ -27,8 +27,7 @@ describe('IpValidator', () => {
            
            const ipValidator = new IpValidator()
 
-           const result = ipValidator.validateIpv4Address("")
             
-          expect(result).toBe(true)
+          expect(()=>ipValidator.validateIpv4Address("1.2.2")).toThrowError("Ip address has invalid structure : "+"1.2.2")
       })
 })
