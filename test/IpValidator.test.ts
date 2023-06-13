@@ -129,5 +129,34 @@ describe('IpValidator', () => {
           
        } )
     })
+
+      describe('Misc true teat cases', () => {
+       
+       it.each([  
+        {
+        address:"1.1.1.1"
+      },
+        {
+        address:"10.0.0.1"
+      },
+        {
+        address:"127.0.0.1"
+      },
+      {
+        address:"192.168.01.1"
+      },
+       {
+        address:"192.168.1.00"
+      }
+    ])('$address should return true',({address})=>{
+             
+          const ipValidator = new IpValidator()
+          
+          const result = ipValidator.validateIpv4Address(address)
+
+          expect(result).toBe(true)
+          
+       } )
+    })
     
 })
