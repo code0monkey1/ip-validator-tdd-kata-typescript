@@ -14,7 +14,7 @@ describe('IpValidator', () => {
       })
 
 
-      it('it returns true when `1.1.1.1` is given as IP ',()=>{
+      it('returns true when `1.1.1.1` is given as IP ',()=>{
            
            const ipValidator = new IpValidator()
 
