@@ -5,8 +5,9 @@ export default class IpValidator{
 
            if(
                this.hasInvalidShape(address) ||
-               this.hasInvalidEnd(address) || 
-               this.hasInvalidSegments(address)
+                this.hasInvalidSegments(address)||
+               this.hasInvalidEnd(address) 
+              
             ) {
                  return false
             }
@@ -56,8 +57,8 @@ export default class IpValidator{
                     return true
                }
          
-              if(Number(part).toString()===part){
-               return true
+              if(Number(part).toString()!==part){
+                return true
               }
 
           })
