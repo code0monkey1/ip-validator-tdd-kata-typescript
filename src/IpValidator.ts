@@ -1,7 +1,9 @@
 export default class IpValidator{
 
+     
      public validateIpv4Address(address:string){
-         
+          
+
            const ipParts= this.splitIpAddress(address)
 
            if(ipParts.length!==4 ||ipParts.some( part => part.trim()==='')){
@@ -21,5 +23,15 @@ export default class IpValidator{
 
           return address.split('.')
      }
+
+     private isInvalidEnd(str:string){
+          
+         const invalidEnds =['255','0']
+
+         if (invalidEnds.includes(srt))
+
+     }
+
+
 
 }
