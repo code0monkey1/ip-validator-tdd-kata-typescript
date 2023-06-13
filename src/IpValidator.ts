@@ -4,9 +4,9 @@ export default class IpValidator{
      public validateIpv4Address(address:string){
 
            if(
-               this.hasInvalidShape(address) ||
+                this.hasInvalidShape(address) ||
                 this.hasInvalidSegments(address)||
-               this.hasInvalidEnd(address) 
+                this.hasInvalidEnd(address) 
               
             ) {
                  return false
