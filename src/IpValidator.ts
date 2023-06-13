@@ -56,7 +56,8 @@ export default class IpValidator{
                if(Number.isNaN(Number(part))){
                     return true
                }
-         
+               console.log("part",part)
+               console.log("number to string",Number(part).toString())
               if(Number(part).toString()!==part){
                 return true
               }

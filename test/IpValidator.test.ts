@@ -101,7 +101,7 @@ describe('IpValidator', () => {
        } )
     })
 
-     describe('Misc false teat cases', () => {
+     describe.only('Misc false teat cases', () => {
        
        it.each([  
       //   {
