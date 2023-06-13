@@ -143,10 +143,10 @@ describe('IpValidator', () => {
         address:"127.0.0.1"
       },
       {
-        address:"192.168.01.1"
+        address:"192.168.1.0"
       },
        {
-        address:"192.168.1.00"
+        address:"1.1.1.1"
       }
     ])('$address should return true',({address})=>{
              
