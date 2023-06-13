@@ -91,7 +91,7 @@ describe('IpValidator', () => {
        {
         address:"255.1.1.0"
       },])('$address should return false',({address})=>{
-             
+    
           const ipValidator = new IpValidator()
           
           const result = ipValidator.validateIpv4Address(address)
