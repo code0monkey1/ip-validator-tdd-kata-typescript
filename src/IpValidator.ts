@@ -52,10 +52,10 @@ export default class IpValidator{
           const ipParts= this.getIpParts(address)
 
           ipParts.forEach( part =>{
-               
-              if(!Number.isInteger(part)){
-                 return true 
-              }
+            
+               if(Number.isNaN(Number(part))){
+                    return true;
+               }
          
               if(Number(part).toString()!==part){
                return true
