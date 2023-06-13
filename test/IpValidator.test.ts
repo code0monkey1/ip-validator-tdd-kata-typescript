@@ -22,4 +22,13 @@ describe('IpValidator', () => {
             
           expect(result).toBe(true)
       })
+
+      it('it returns false when IP address is not separated by 4 dots like 1.2.2 ',()=>{
+           
+           const ipValidator = new IpValidator()
+
+           const result = ipValidator.validateIpv4Address("")
+            
+          expect(result).toBe(true)
+      })
 })
