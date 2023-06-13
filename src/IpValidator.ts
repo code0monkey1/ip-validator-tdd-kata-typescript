@@ -3,13 +3,8 @@ export default class IpValidator{
      
      public validateIpv4Address(address:string){
 
-           if(this.hasInvalidShape(address))
-               throw new Error("Ip address has invalid structure : "+address)
-           
-
-           if(this.hasInvalidEnd(address))
+           if(this.hasInvalidShape(address) || this.hasInvalidEnd(address))
                return false
-           
            
            return true
      }
