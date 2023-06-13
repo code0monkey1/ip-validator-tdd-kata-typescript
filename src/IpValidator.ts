@@ -37,7 +37,7 @@ export default class IpValidator{
 
             const ipParts= this.getIpParts(address)
 
-            return ipParts.length!==VALID_PARTS_LENGTH || ipParts.some( part => part.trim()==='')
+            return ipParts.length!==VALID_PARTS_LENGTH ||ipParts.some( part => part.trim()==='')
 
      }
 
