@@ -7,7 +7,13 @@ export default class IpValidator{
            if(ipParts.length!==4 ||ipParts.some( part => part.trim()==='')){
                throw new Error("Ip address has invalid structure : "+address)
            }
-          return true
+
+           if(ipParts[3]==='255'){
+               return false
+           }
+
+           
+           return true
 
      }
 
