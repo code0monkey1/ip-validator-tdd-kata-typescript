@@ -29,14 +29,13 @@ export default class IpValidator{
          const invalidEnds =['255','0']
 
          return invalidEnds.includes(ipParts[LAST_INDEX])
-
      }
 
      private hasInvalidIpParts(address:string){
 
-            const ipParts= this.getIpParts(address)
-
             const VALID_LENGTH = 4
+
+            const ipParts= this.getIpParts(address)
 
             return ipParts.length!==VALID_LENGTH ||ipParts.some( part => part.trim()==='')
 
