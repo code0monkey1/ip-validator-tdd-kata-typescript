@@ -53,15 +53,10 @@ export default class IpValidator{
           
           ipParts.forEach( part =>{
      
-               if(Number.isNaN(Number(part))){
+               if(Number.isNaN(Number(part)) || Number(part).toString().length!==part.length ){
                     return true
                }
-               console.log("part",part)
-               console.log("number to string",Number(part).toString())
-              if(Number(part).toString()!==part){
-                return true
-              }
-
+         
           })
 
           return false
